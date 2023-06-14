@@ -1,0 +1,22 @@
+
+.dot-wrap {
+    padding: 90px 0;
+    gap: 16px;
+
+    @include mobile {
+        padding: 40px 0;
+    }
+}
+
+.slider-dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 3px $text-secondary-color;
+    cursor: pointer;
+
+    &.active {
+        background-color: $text-secondary-color;
+    }
+}                               

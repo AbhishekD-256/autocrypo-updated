@@ -1,0 +1,71 @@
+.testimonials__card {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    padding: 80px 60px 63px 50px;
+    border-radius: 6px;
+    box-shadow: 12px 12px 40px 0 rgba(121, 121, 121, 0.3);
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all 0.5s ease-in;
+    margin-right: 20px;
+
+    .quote {
+        max-width: 300px;
+    }
+
+    &.slick-current {
+        color: $text-secondary-color;
+        background-color: $secondary-color;
+
+        svg g {
+            fill: $text-secondary-color;
+        }
+
+        .user-name{
+            color: $text-secondary-color;
+        }
+    }   
+    .user-name {
+        color: $primary-color;
+        font-weight: bold;
+    }    
+   
+    @include tablet {
+        padding: 40px 30px;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    position: relative;
+    left: 20%;
+    list-style: none;
+    padding: 0;
+    padding: 40px 0;
+    @include laptop {
+        position: static;
+        justify-content: center;
+    }
+  }
+  
+  .slick-dots li {
+    margin: 0 5px;
+  }
+  
+  .slick-dots li button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $text-secondary-color;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0;
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: $secondary-color;
+  }

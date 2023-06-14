@@ -1,0 +1,263 @@
+body {
+    background-color: #f8f9fc;
+    color: $text-primary-color;
+    font-family: 'Rubik', sans-serif;
+    font-size: $base-font-size;
+}
+
+.container{
+    max-width: 1210px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.hero {
+    position: relative;
+    min-height: 700px;
+    max-height: 1100px;
+    height: 90vh;
+    background-color: $primary-color;
+    color: $text-secondary-color;
+    
+    .container {
+        height: 100%;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 550px;
+    }
+    .title {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    p {
+        margin-bottom: 35px;
+    }
+    &__banner {
+        align-self: end;
+        max-width: 350px;
+
+        img {
+         width: 100%;
+         vertical-align: middle;
+        }
+    }
+    @include laptop {
+        &__banner {
+            position: absolute;
+            bottom: 0;
+            right: 16px;
+            width: 300px;
+            opacity: 0.5;
+        }  
+    }
+    @include mobile {
+        .title {
+            font-size: 38px;
+        }
+
+        &__banner {
+            opacity: 0.2;
+        }
+    }
+}
+
+.benifits {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 60px 78px ;
+    border-radius: 10px;
+    background-color: $text-secondary-color;
+    box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+    transform: translateY(-95px);
+
+    &__item {
+        width: 300px;
+
+        &-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 6px;
+            margin-bottom: 26px;
+            background-color:rgba(31, 219, 132, 0.1);
+    
+            img {
+                width: 40px;
+                height: 33px;
+            }
+        }
+
+    }
+    &-subtitle {
+        position: relative;
+        padding-bottom: 28px;
+
+        &::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: $secondary-color;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+    }
+    p {
+         margin-top: 18px;   
+    }
+    @include laptop {
+        gap: 50px;
+        transform: translateY(0);
+        box-shadow: none;
+        border-radius: 0;
+    }
+    @include tablet {
+        flex-wrap: wrap-reverse;
+        padding: 30px 0;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        &-subtitle {
+            padding-bottom: 0;
+            
+            &::after {
+                display: none;
+            }
+      }
+    }
+}
+
+.pricing-section {
+    padding: 100px 0;
+
+    .container {
+        flex-direction: column;
+        gap: 60px;
+        
+    }
+    h2.title-lg {
+        max-width: 800px;
+    } 
+    .pricing {
+        gap: 24px;
+        
+        &-toggler {
+            border-radius: 5px;
+            border: solid 1px #aefdd9;    
+            font-size: $base-font-size;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #6fdeaa;
+            background-color: #f1fff8;
+            overflow: hidden;
+            cursor: pointer;
+
+         
+        }
+    }
+    .monthly {
+        display: inline-block;
+        padding: 20px 35px;
+        border-right: solid 1px #aefdd9;
+    
+        &.active {
+           @include active-price;
+        }
+    }
+    .yearly {
+        padding: 20px 30px 20px 40px;
+    
+        &.active {
+          @include active-price;
+        }
+    }
+    
+    @include laptop {
+        .pricing {
+            flex-wrap: wrap;
+        }
+    }
+    @include tablet {
+        .offer-period {
+            display: none;
+        }
+    }
+}
+
+.testimonial-section {
+    background: url('http://localhost:3000/assets/src/images/quote-bg.png') top left 120px / 378px no-repeat, linear-gradient(to right, $primary-color, $primary-color) top right / 60% no-repeat;
+    overflow: hidden;
+
+    h2 {
+        padding: 70px 0;
+    }
+
+    .testimonials {
+        position: relative;
+        left: 25%;
+        overflow: hidden;
+   
+    }
+
+    @include responsive(1200) {
+        background: $primary-color;
+
+        h2 {
+            color: $text-secondary-color;
+            text-align: center;
+        }
+    }
+
+    @include laptop {
+        .testimonials {
+            position: static;
+            overflow: visible;
+            padding: 0 16px;
+
+        }
+    }
+}
+
+.clients-section {
+    padding: 180px 0;
+
+    h2 {
+        margin-bottom: 45px;
+    }
+    .clients {
+        gap: 48px;
+        flex-wrap: wrap;
+
+        li {
+            line-height: 0;
+        }
+    }
+    @include laptop {
+        .clients {
+            gap: 30px;
+        }
+    }
+    @include tablet {
+        padding: 60px 0;
+    }
+}
+
+
+@include mobile {
+
+    .pricing-section, .testimonial-section h2 {
+        padding: 30px 0;
+    }
+
+    .title-lg {
+        font-size: 30px;
+    }
+}

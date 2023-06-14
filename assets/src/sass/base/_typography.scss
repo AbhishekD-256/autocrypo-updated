@@ -1,0 +1,16 @@
+.text-md {
+    font-size: $base-font-size;
+    line-height: 2;
+}
+
+.text-lg {
+    font-size: 20px;
+    color:$primary-color;
+}
+
+.title-lg {
+    line-height: 1.6;
+    font-size: 40px;
+    font-weight: bold;
+    color: $primary-color;
+}

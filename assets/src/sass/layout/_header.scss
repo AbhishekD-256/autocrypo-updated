@@ -1,0 +1,140 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 25px 0;
+    transition: 0.5s;
+
+
+    .#{&}__link {
+        position: relative;
+        color: $text-secondary-color;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: $secondary-color;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        &:hover {
+            color: $secondary-color;
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    .logo {
+        color: $text-secondary-color;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 2.23;
+
+    }
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+
+    .ham-bar {
+        display: inline-block;
+        position: relative;
+        width: 25px;
+        height: 3px;
+        background-color: $secondary-color;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            height: 3px;
+            background-color: $secondary-color;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &::before {
+            top: -8px;
+            width: 20px;
+        }
+
+        &::after {
+            top: 8px;
+            width: 28px;
+            
+        }
+    }
+    &.open {
+        .ham-bar{
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(3px, 4px);
+                width: 28px;
+            }
+            &::after {
+                transform: rotate(-45deg) translate(6px, -9px);                
+            }
+        }
+    }
+}
+
+.main-nav ,
+.button-wrap
+{
+    gap: 37px;
+}
+
+@include tablet {
+    .menu-btn {
+        display: block;
+        height: 25px;
+    }
+    .main-nav {
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        height: 0;
+        z-index: 100;
+        overflow: hidden;
+        background-color: $primary-color;
+        box-shadow: 2px 19px 19px -9px rgba(0,0,0,0.75);
+        transition: all 0.5s ease;
+
+        li {
+            padding: 15px;
+        }
+
+        &.open {
+            height: 300px;
+        }
+    }
+}
+
+@include mobile {
+    .button-wrap {
+        gap: 20px;
+        .header__link {
+            display: none;
+        }
+        button.btn-sm {
+            font-size: 14px;
+            padding: 4px 10px;
+        }
+    }
+}

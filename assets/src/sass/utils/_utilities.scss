@@ -1,0 +1,31 @@
+.text-up{
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-center,
+.flex-space {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-space {
+    justify-content: space-between;
+}
+
+.hide-animate {
+    opacity: 0;
+    transform: translateY(20%);
+}
+
+.smooth-anim {
+    transition: all 0.4s ease-in-out;
+}
+

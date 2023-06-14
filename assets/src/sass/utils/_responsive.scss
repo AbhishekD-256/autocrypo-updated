@@ -1,0 +1,29 @@
+$break-points: (
+  "mobile": 480px,
+  "tablet":  768px,
+  "laptop": 1024px,
+);
+
+@mixin mobile {
+  @media screen and (max-width: #{map-get($break-points, "mobile")}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: #{map-get($break-points, "tablet")}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: #{map-get($break-points, "laptop")}) {
+    @content;
+  }
+}
+
+@mixin responsive($bp) {
+  @media screen and (max-width: #{$bp}px) {
+    @content;
+  }
+}
