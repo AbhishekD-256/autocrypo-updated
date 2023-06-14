@@ -42,6 +42,9 @@ header {
         line-height: 2.23;
 
     }
+    @include tablet {
+        padding: 10px 0;
+    }
 }
 
 .menu-btn {

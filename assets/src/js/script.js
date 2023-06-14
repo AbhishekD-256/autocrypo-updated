@@ -87,9 +87,7 @@ $(document).ready(function () {
 const section = document.querySelector(".js-observer-section");
 const heroContent = document.querySelector(".js-content");
 
-console.log(heroContent);
-
-function hideContent(entries, observer) {
+function hideContent(entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) {
     heroContent.classList.remove("hide-animate");
@@ -122,3 +120,21 @@ const showObserver = new IntersectionObserver(showitems, {
 hidenItems.forEach((item) => {
   showObserver.observe(item);
 });
+
+// sticky navbar
+
+const hero = document.querySelector(".hero");
+
+function makeStickyNav(entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    header.classList.add("sticky-nav");
+  } else header.classList.remove("sticky-nav");
+}
+const headerObserver = new IntersectionObserver(makeStickyNav, {
+  root: null,
+  threshold: 1,
+  rootMargin: `${header.getBoundingClientRect().height}px`,
+});
+
+headerObserver.observe(hero);
