@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/dist/css/main.css">
     <title>autocrypo</title>
 </head>
@@ -155,9 +156,9 @@
                 <h2 class="title-lg  hide-animate  smooth-anim">What <br>Customers Say</h2>
             </div>
 
-            <div class="testimonials">
-                <ul class="testimonials-wrap">
-                    <li class="testimonials__card  active  js-card--0">
+            <div class="testimonials  swiper">
+                <ul class="testimonials-wrap  swiper-wrapper">
+                    <li class="testimonials__card  swiper-slide  active  js-card--0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40">
                             <g fill="#1FDB84" fill-rule="evenodd">
                                 <path d="M0 0h18v18.947L0 40zM31 0h18v18.947L31 40z" />
@@ -175,7 +176,7 @@
                         </div>
                     </li>
 
-                    <li class="testimonials__card  js-card--1">
+                    <li class="testimonials__card  swiper-slide  js-card--1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40">
                             <g fill="#1FDB84" fill-rule="evenodd">
                                 <path d="M0 0h18v18.947L0 40zM31 0h18v18.947L31 40z" />
@@ -193,7 +194,7 @@
                         </div>
                     </li>
 
-                    <li class="testimonials__card  js-card--2">
+                    <li class="testimonials__card  swiper-slide  js-card--2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40">
                             <g fill="#1FDB84" fill-rule="evenodd">
                                 <path d="M0 0h18v18.947L0 40zM31 0h18v18.947L31 40z" />
@@ -210,7 +211,7 @@
                         </div>
                     </li>
 
-                    <li class="testimonials__card  js-card--3">
+                    <li class="testimonials__card  swiper-slide  js-card--3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40">
                             <g fill="#1FDB84" fill-rule="evenodd">
                                 <path d="M0 0h18v18.947L0 40zM31 0h18v18.947L31 40z" />
@@ -229,7 +230,7 @@
                         </div>
 
                     </li>
-                    <li class="testimonials__card  js-card--4">
+                    <li class="testimonials__card  swiper-slide  js-card--4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40">
                             <g fill="#1FDB84" fill-rule="evenodd">
                                 <path d="M0 0h18v18.947L0 40zM31 0h18v18.947L31 40z" />
@@ -247,6 +248,7 @@
                         </div>
                     </li>
                 </ul>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -287,6 +289,7 @@
             <li><a class="footer-nav__link" href="javascript:void(0)">Clients</a></li>
         </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/dist/js/script.js"></script>
 </body>
 

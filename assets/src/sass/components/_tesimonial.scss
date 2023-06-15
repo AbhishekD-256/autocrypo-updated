@@ -1,20 +1,39 @@
-.testimonials__card {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 500px;
-    padding: 80px 60px 63px 50px;
-    border-radius: 6px;
-    box-shadow: 12px 12px 40px 0 rgba(121, 121, 121, 0.3);
-    background-color: rgba(255, 255, 255, 0.95);
-    transition: all 0.5s ease-in;
-    margin-right: 20px;
+.testimonials {
+    position: relative;
+    left: 25%;
+    overflow: hidden;
 
-    .quote {
-        max-width: 300px;
+    &-wrap {
+        position: relative;
+        right: 33%;
     }
 
-    &.slick-current {
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 500px;
+        padding: 80px 60px 63px 50px;
+        border-radius: 6px;
+        box-shadow: 12px 12px 40px 0 rgba(121, 121, 121, 0.3);
+        background-color: rgba(255, 255, 255, 0.95);
+        transition: all 0.5s ease-in;
+        margin-right: 20px;
+    
+        .quote {
+            max-width: 300px;
+        } 
+        .user-name {
+            color: $primary-color;
+            font-weight: bold;
+        }    
+       
+        @include tablet {
+            padding: 40px 30px;
+        }
+    }
+    
+    .swiper-slide-active {
         color: $text-secondary-color;
         background-color: $secondary-color;
 
@@ -25,47 +44,41 @@
         .user-name{
             color: $text-secondary-color;
         }
-    }   
-    .user-name {
-        color: $primary-color;
-        font-weight: bold;
-    }    
-   
-    @include tablet {
-        padding: 40px 30px;
     }
-}
 
-.slick-dots {
-    display: flex;
-    position: relative;
-    left: 20%;
-    list-style: none;
-    padding: 0;
-    padding: 40px 0;
+    .swiper-pagination {
+        position: relative;
+        top: 0;
+        left: -25%;
+        padding: 40px 0;
+
+        &-bullet {
+            width: 20px;
+            height: 20px;
+            background-color: $text-secondary-color;
+
+            &-active {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
     @include laptop {
         position: static;
-        justify-content: center;
+        overflow: visible;
+        padding: 0 16px;
+
+        &-wrap {
+            position: static;
+        }
+        
+        .swiper-pagination {
+            position: static;
+        }
     }
-  }
-  
-  .slick-dots li {
-    margin: 0 5px;
-  }
-  
-  .slick-dots li button {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: $text-secondary-color;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 0;
-  }
-  
-  .slick-dots li.slick-active button {
-    background-color: $secondary-color;
-  }
+
+}
+
+
+
+

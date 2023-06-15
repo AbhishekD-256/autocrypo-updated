@@ -57,6 +57,33 @@ priceCardBtns.forEach((btn, i) => {
 });
 
 //-------- testimonial cards slider---------//
+var swiper = new Swiper(".testimonials", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    260: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+});
 
 // Hero-section hide
 

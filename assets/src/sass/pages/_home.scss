@@ -199,29 +199,13 @@ body {
     h2 {
         padding: 70px 0;
     }
-
-    .testimonials {
-        position: relative;
-        left: 25%;
-        overflow: hidden;
-   
-    }
-
+    
     @include responsive(1200) {
         background: $primary-color;
 
         h2 {
             color: $text-secondary-color;
             text-align: center;
-        }
-    }
-
-    @include laptop {
-        .testimonials {
-            position: static;
-            overflow: visible;
-            padding: 0 16px;
-
         }
     }
 }
