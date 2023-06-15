@@ -3,9 +3,9 @@ const mainNav = document.querySelector(".js-nav");
 const header = document.querySelector("header");
 
 const pricingToggle = document.querySelector(".pricing-toggler");
-const monthBtn = document.querySelector(".monthly");
-const yearBtn = document.querySelector(".yearly");
-const prices = document.querySelectorAll(".price");
+const monthBtn = document.querySelector(".pricing-toggler__monthly");
+const yearBtn = document.querySelector(".pricing-toggler__yearly ");
+const prices = document.querySelectorAll(".pricing__card__price");
 const pricePeriods = document.querySelectorAll(".price-period");
 const priceCardBtns = document.querySelectorAll(".js-trail-btn");
 const pricingCards = document.querySelectorAll(".pricing__card");
@@ -21,31 +21,29 @@ function openNavbar() {
 }
 menuBtn.addEventListener("click", openNavbar);
 
-//-------Pricing Card-----------//
+//-------Pricing-Toggle-Button-----------//
 
 const monthlyPlan = [10, 29, 49];
+const yealryPlan = [100, 290, 490];
+
+function changePrice(targetEl, ElemToRemove, plansArray, pricePeriod) {
+  ElemToRemove.classList.remove("active");
+  targetEl.classList.add("active");
+  prices.forEach((prices, i) => {
+    prices.textContent = `$${plansArray[i]}`;
+    pricePeriods[i].textContent = `${pricePeriod}`;
+  });
+}
 function togglePlans(e) {
-  if (e.target.classList.contains("monthly")) {
-    yearBtn.classList.remove("active");
-    e.target.classList.add("active");
-    prices.forEach((prices, i) => {
-      prices.textContent = `$${monthlyPlan[i]}`;
-      pricePeriods[i].textContent = "Per Month";
-    });
-  } else if (e.target.classList.contains("yearly")) {
-    monthBtn.classList.remove("active");
-    e.target.classList.add("active");
-    prices.forEach((prices, i) => {
-      prices.textContent = `$${monthlyPlan[i] * 12 - 2 * monthlyPlan[i]}`;
-      pricePeriods[i].textContent = "Per Year";
-    });
-  } else {
-    return;
-  }
+  e.target.classList.contains("pricing-toggler__monthly")
+    ? changePrice(e.target, yearBtn, monthlyPlan, "Per Month")
+    : changePrice(e.target, monthBtn, yealryPlan, "Per Year");
 }
 pricingToggle.addEventListener("click", function (e) {
   togglePlans(e);
 });
+
+//-------Pricing-Card-----------//
 
 priceCardBtns.forEach((btn, i) => {
   btn.addEventListener("click", function () {
@@ -56,7 +54,8 @@ priceCardBtns.forEach((btn, i) => {
   });
 });
 
-//-------- testimonial cards slider---------//
+//-------- Testimonial-cards-slider---------//
+
 var swiper = new Swiper(".testimonials", {
   slidesPerView: 3,
   spaceBetween: 30,
@@ -85,7 +84,7 @@ var swiper = new Swiper(".testimonials", {
   },
 });
 
-// Hero-section hide
+//------------Hero-Content-animation-----------//
 
 const section = document.querySelector(".js-observer-section");
 const heroContent = document.querySelector(".js-content");
@@ -98,6 +97,8 @@ function hideContent(entries) {
     heroContent.classList.add("hide-animate");
   }
 }
+
+//------------Eliments-Reveal-animation-----------//
 
 const contentObserver = new IntersectionObserver(hideContent, {
   root: null,
@@ -124,7 +125,7 @@ hidenItems.forEach((item) => {
   showObserver.observe(item);
 });
 
-// sticky navbar
+//---------sticky-navbar------------//
 
 const hero = document.querySelector(".hero");
 

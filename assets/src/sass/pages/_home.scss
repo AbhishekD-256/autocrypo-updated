@@ -163,7 +163,7 @@ body {
          
         }
     }
-    .monthly {
+    .pricing-toggler__monthly {
         display: inline-block;
         padding: 20px 35px;
         border-right: solid 1px #aefdd9;
@@ -172,7 +172,7 @@ body {
            @include active-price;
         }
     }
-    .yearly {
+    .pricing-toggler__yearly {
         padding: 20px 30px 20px 40px;
     
         &.active {
